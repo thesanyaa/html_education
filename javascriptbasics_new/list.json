@@ -1,0 +1,32 @@
+[
+  {
+    "value": "alma1",
+    "text" : "Alma1",
+    "parent" : "alma"
+  },
+  {
+    "value": "repa",
+    "text" : "répa1",
+    "parent" : "repa"
+  },
+  {
+    "value": "gomba1",
+    "text" : "Gomba1",
+    "parent" : "g1"
+  },
+  {
+    "value": "gomba1",
+    "text" : "SyarvasGomba1",
+    "parent" : "g2"
+  },
+  {
+    "value": "gomba2",
+    "text" : "Gomba11",
+    "parent" : "g3"
+  },
+  {
+    "value": "gomba3",
+    "text" : "Gomba21",
+    "parent" : "g1"
+  }
+]

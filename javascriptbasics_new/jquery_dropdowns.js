@@ -16,6 +16,8 @@ $(document).ready(function () {
     })
   })
 
+
+
   var menu2
   $.get("dropdown2.json", function (data) {
     menu2 = data
@@ -29,6 +31,19 @@ $(document).ready(function () {
     })
   })
 
+  var menu3
+  $.get("list.json", function (data) {
+    menu3 = data
+  }).done(function (data) {
+
+    menu3.forEach(function (item) {
+      $('#list')
+          .append($("<li></li>")
+          .text(item.text))
+    })
+  })
+
+
   $( "#dropdown2" ).on( "choose", function(event, selected) {
     $("#dropdown2").empty()
     menu2.forEach(function (item) {
@@ -41,11 +56,29 @@ $(document).ready(function () {
     })
   });
 
+  $( "#list" ).on( "choose", function(event, selected) {
+    $('#list').empty()
+    menu3.forEach(function (item) {
+      if(item.parent === selected) {
+        $('#list')
+            .append($("<li></li>")
+                .attr("value",item.value)
+                .text(item.text));
+      }
+    })
+  });
+
   $( "#dropdown1" ).change(function(){
-    console.log("test");
     var selected = $("#dropdown1 option:selected").val()
     $( "#dropdown2" ).trigger( "choose", selected )
   })
+
+  $( "#dropdown2" ).change(function(){
+    var selected = $("#dropdown2 option:selected").val()
+    $( "#list" ).trigger( "choose", selected )
+  })
+
+
 })
 
 
