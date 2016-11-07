@@ -24,7 +24,6 @@ window.onload = function () {
     console.log(oReq2.responseText);
     obj2 = JSON.parse(oReq2.responseText);
     document.getElementById('demo1').dispatchEvent(event);
-
   }
 
   var oReq3 = new XMLHttpRequest();
